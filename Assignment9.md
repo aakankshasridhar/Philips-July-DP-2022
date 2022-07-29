@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/53172079/181473764-8096c210-6af2-49af-b0af-798146d69810.png)
+![image](https://user-images.githubusercontent.com/53172079/181787423-0e845556-0c97-44be-be9d-f9756e007c2a.png)
 
     public class Document
     {
@@ -36,7 +36,7 @@
 
         public void Convert(IDocumentFormat format)
         {
-            format.ConvertHeader(this);
+            format.Convert(this);
         }
     }
     
@@ -46,7 +46,7 @@
 
         public void Convert(IDocumentFormat format)
         {
-            format.ConvertFooter(this);
+            format.Convert(this);
         }
     }
     
@@ -56,7 +56,7 @@
 
         public void Convert(IDocumentFormat format)
         {
-            format.ConvertParagraph(this);
+            format.Convert(this);
         }
     }
     
@@ -66,71 +66,71 @@
 
         public void Convert(IDocumentFormat format)
         {
-            format.ConvertLink(this);
+            format.Convert(this);
         }
     }
     
     public interface IDocumentFormat
     {
-        void ConvertHeader(IDocumentPart doc);
-        void ConvertFooter(IDocumentPart doc);
-        void ConvertParagraph(IDocumentPart doc);
-        void ConvertLink(IDocumentPart doc);
+        void Convert(HeaderPart doc);
+        void Convert(FooterPart doc);
+        void Convert(ParagraphPart doc);
+        void Convert(LinkPart doc);
     }
     
     public class HTMLFormat: IDocumentFormat
     {
-        public void ConvertHeader(IDocumentPart docPart)
+        public void Convert(HeaderPart docPart)
         {
         }
 
-        public void ConvertFooter(IDocumentPart docPart)
+        public void Convert(FooterPart docPart)
         {
         }
 
-        public void ConvertParagraph(IDocumentPart docPart)
+        public void Convert(ParagraphPart docPart)
         {
         }
 
-        public void ConvertLink(IDocumentPart docPart)
+        public void Convert(LinkPart docPart)
         {
         }
     }
     
     public class RTFFormat: IDocumentFormat
     {
-        public void ConvertHeader(IDocumentPart docPart)
+        public void Convert(HeaderPart docPart)
         {
         }
 
-        public void ConvertFooter(IDocumentPart docPart)
+        public void Convert(FooterPart docPart)
         {
         }
 
-        public void ConvertParagraph(IDocumentPart docPart)
+        public void Convert(ParagraphPart docPart)
         {
         }
 
-        public void ConvertLink(IDocumentPart docPart)
+        public void Convert(LinkPart docPart)
         {
         }
     }
     
     public class PDFFormat: IDocumentFormat
     {
-        public void ConvertHeader(IDocumentPart docPart)
+        public void Convert(HeaderPart docPart)
         {
         }
 
-        public void ConvertFooter(IDocumentPart docPart)
+        public void Convert(FooterPart docPart)
         {
         }
 
-        public void ConvertParagraph(IDocumentPart docPart)
+        public void Convert(ParagraphPart docPart)
         {
         }
 
-        public void ConvertLink(IDocumentPart docPart)
+        public void Convert(LinkPart docPart)
         {
         }
     }
