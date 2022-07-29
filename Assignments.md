@@ -16,6 +16,9 @@ Cables
 
 The Computers product category contains both the Desktops and the Laptops product categories as its subcategories. The Desktop category can contain a product item such as Compaq Presario 5050. Product items are usually individual, in the sense that they do not contain any product component within. Design and implement an PricingCalculator to list the dollar value of a product component or Product Category.
 
+![image](https://user-images.githubusercontent.com/53172079/181826869-f10b53fe-cfab-49ed-9958-929ea938da87.png)
+
+
 **Assignment - 2**
 
 public class OnlineCart
@@ -91,6 +94,12 @@ public class OnlineCart
     }
 
 }
+
+•	Violation of open close principle because if a new payment type is added switch case needs to be modified.
+•	Violation of single responsibility principle because one method has multiple responsibility
+
+![image](https://user-images.githubusercontent.com/53172079/181827144-6e5f3c3b-9a11-4e32-9372-7682a3733487.png)
+
 
 **Assignment - 3**
 
