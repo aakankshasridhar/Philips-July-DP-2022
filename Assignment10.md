@@ -1,54 +1,5 @@
-//Double Dispatch Problem
-using System;
+Image Plotting Problem
 
-public class A
-{
-    public virtual void M(IVisitor visitor)
-    {
-        visitor.Visit(this);
-        Console.WriteLine("A.M");
-    }
-}
-
-public class B : A
-{
-    public override void M(IVisitor visitor)
-    {
-        visitor.Visit(this);
-        Console.WriteLine("B.M");
-    }
-}
-
-public interface IVisitor
-{
-    void Visit(B item);
-    void Visit(A item);
-}
-
-public sealed class Visitor : IVisitor
-{
-    public void Visit(A item)
-    {
-        Console.WriteLine("C.A.N");
-    }
-
-    public void Visit(B item)
-    {
-        Console.WriteLine("C.B.N");
-    }
-}
-
-public class Program
-{
-    public static void Main()
-    {
-        var visitor = new Visitor();
-        A obj=new B();
-        obj.M(visitor);
-    }
-}
-
- //Image Plotting Problem
 <img width="400" alt="image" src="https://user-images.githubusercontent.com/53172079/181820734-952646a4-83b2-4f06-adc6-e9b2658978be.png">
     
     using System;
@@ -193,3 +144,54 @@ public class Program
             Console.WriteLine(polygon.GetSides());
         }
     }
+    
+Double Dispatch Problem
+
+using System;
+
+public class A
+{
+    public virtual void M(IVisitor visitor)
+    {
+        visitor.Visit(this);
+        Console.WriteLine("A.M");
+    }
+}
+
+public class B : A
+{
+    public override void M(IVisitor visitor)
+    {
+        visitor.Visit(this);
+        Console.WriteLine("B.M");
+    }
+}
+
+public interface IVisitor
+{
+    void Visit(B item);
+    void Visit(A item);
+}
+
+public sealed class Visitor : IVisitor
+{
+    public void Visit(A item)
+    {
+        Console.WriteLine("C.A.N");
+    }
+
+    public void Visit(B item)
+    {
+        Console.WriteLine("C.B.N");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        var visitor = new Visitor();
+        A obj=new B();
+        obj.M(visitor);
+    }
+}
