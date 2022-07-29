@@ -48,9 +48,9 @@ public class Program
     }
 }
 
-<img width="387" alt="image" src="https://user-images.githubusercontent.com/53172079/181820293-2c00ce84-c0a6-4e50-91cf-b2404468649a.png">
+ //Image Plotting Problem
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/53172079/181820734-952646a4-83b2-4f06-adc6-e9b2658978be.png">
     
-    //Image Plotting Problem
     using System;
     using System.Collections.Generic;
 
