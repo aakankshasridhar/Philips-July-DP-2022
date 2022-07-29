@@ -1,5 +1,83 @@
+//Double Dispatch Problem
+using System;
+
+public class A
+{
+    public virtual void M(IVisitor visitor)
+    {
+        visitor.Visit(this);
+        Console.WriteLine("A.M");
+    }
+}
+
+public class B : A
+{
+    public override void M(IVisitor visitor)
+    {
+        visitor.Visit(this);
+        Console.WriteLine("B.M");
+    }
+}
+
+public interface IVisitor
+{
+    void Visit(B item);
+    void Visit(A item);
+}
+
+public sealed class Visitor : IVisitor
+{
+    public void Visit(A item)
+    {
+        Console.WriteLine("C.A.N");
+    }
+
+    public void Visit(B item)
+    {
+        Console.WriteLine("C.B.N");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        var visitor = new Visitor();
+        A obj=new B();
+        obj.M(visitor);
+    }
+}
+
+<img width="387" alt="image" src="https://user-images.githubusercontent.com/53172079/181820293-2c00ce84-c0a6-4e50-91cf-b2404468649a.png">
+    
+    //Image Plotting Problem
     using System;
     using System.Collections.Generic;
+
+    public class Program 
+    {
+        public static void Main() 
+        {
+            Shape rectangle = new Rectangle();
+            Shape circle = new Circle();
+            Shape polygon = new Polygon();
+            
+            ShapePrinter laserPrinter = new LaserPrinter();
+            ShapePrinter inkJetrinter = new InkJetPrinter();
+            
+            Image image = new Image();
+            
+            image.Shapes.Add(rectangle);
+            image.Shapes.Add(circle);
+            image.Shapes.Add(polygon);
+            
+            List<ShapePrinter> printes = new List<ShapePrinter>();
+            plotters.Add(laserPrinter);
+            plotters.Add(inkJetrinter);
+            
+            image.plot(printes);
+        }
+    }
 
     public class Image
     {
@@ -10,13 +88,13 @@
             Shapes = new List<Shape>();
         }
         
-        public void plot(List<ShapePlotter> plotters)
+        public void Plot(List<ShapePrinter> printers)
         {
             foreach(Shape shape in shapes)
             {
-                foreach(ShapePlotter plotter in plotters)
+                foreach(ShapePrinter printer in printers)
                 {
-                    shape.plot(plotter);
+                    shape.plot(printer);
                 }
             }
         }   
@@ -24,31 +102,32 @@
 
     public abstract class Shape
     {
-        public abstract void Plot(ShapePlotter plotter);
+        public abstract void Plot(ShapePrinter printer);
     }
 
     public class Rectangle : Shape
     {
         public string GeHeightAndWidth()
         { 
-          
+            return "R.H.W";
         }
         
-        public override void plot(ShapePlotter plotter) 
+        public override void Plot(ShapePrinter printer) 
         {
-            plotter.Plot(this);
+            printer.Plot(this);
         }   
     }
+    
     public class Circle : Shape
     {
         public string GetRadius()
         { 
-           
+            return "C.R";   
         }
         
-        public override void plot(ShapePlotter plotter) 
+        public override void Plot(ShapePrinter printer) 
         {
-            plotter.Plot(this);
+            printer.Plot(this);
         }   
     }
     
@@ -56,16 +135,16 @@
     {
         public string GetSides()
         { 
-           
+            return "P.S";
         }
         
-        public override void plot(ShapePlotter plotter) 
+        public override void Plot(ShapePrinter printer) 
         {
-            plotter.Plot(this);
+            printer.Plot(this);
         }   
     }
 
-    public abstract class ShapePlotter
+    public abstract class ShapePrinter
     {
         public abstract void Plot(Rectangle rectangle);
         public abstract void Plot(Circle circle);
@@ -73,7 +152,7 @@
     }
         
 
-    public class LaserPrinter : ShapePlotter
+    public class LaserPrinter : ShapePrinter
     {
         public override void Plot(Rectangle rectangle)
         {
@@ -94,7 +173,7 @@
         }
     }
 
-    public class InkJetPrinter : ShapePlotter
+    public class InkJetPrinter : ShapePrinter
     {
         public override void Plot(Rectangle rectangle)
         {
@@ -112,31 +191,5 @@
         {
             Console.WriteLine("Polygon using LaserPrinter);
             Console.WriteLine(polygon.GetSides());
-        }
-    }
-
-    public class Program 
-    {
-        public static void Main() 
-        {
-            Shape rect = new Rectangle();
-            Shape circle = new Circle();
-            Shape polygon = new Polygon();
-            
-            ShapePoltter laserPrinter = new LaserPrinter();
-            ShapePoltter inkJetrinter = new InkJetPrinter();
-            
-            Image image = new Image();
-            
-            image.Shapes.Add(rect);
-            image.Shapes.Add(circle);
-            image.Shapes.Add(polygon);
-            
-            List<ShapePlotter> plotters = new List<ShapePlotter>();
-            plotters.Add(laserPrinter);
-            plotters.Add(inkJetrinter);
-            
-            // plotting all shapes
-            image.plot(plotters);
         }
     }
