@@ -140,6 +140,74 @@ Design-it
 
 https://github.com/venu-shastri/design-patterns-summary/blob/main/DEBT_CODE.docx
 
+public class Icon
+
+{
+
+    float speed, glow, energy;
+    
+    int x, y;
+
+    public void move(IAction action)
+    {
+        action.Act();
+    }
+}
+
+public interface IAction
+
+{
+
+    void Act();
+
+}
+
+public class Hopper : IAction
+
+{
+    
+    bool visible; // need for hopper
+    
+    int xcoord, ycoord; // need for hopper
+
+    public void Act() 
+    { 
+    
+    }
+
+}
+
+public class Spinner : IAction
+
+{
+    
+    bool clockwise; // need for spinner
+    
+    bool expand; // need for spinner
+
+    public void Act() 
+    { 
+    }
+    
+}
+
+public class Slider : IAction
+
+{
+    
+    bool vertical; // need for slider
+ 
+    int distance; // need for slider
+
+    public void Act() 
+    { 
+    }
+    
+}
+
+<img width="503" alt="image" src="https://user-images.githubusercontent.com/53172079/181908214-13aa777e-2c7a-42d1-a759-cf428d2c3660.png">
+
+
 **Assignment 5**
 
 Let us build a sales reporting application for the management of a store with multiple departments. The features of the application include:
