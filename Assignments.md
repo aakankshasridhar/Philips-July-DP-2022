@@ -240,6 +240,62 @@ public class ConcreteCalculator : ICalculator
     }
 }
 
+**Refactored**
+
+Decorator Pattern
+
+public interface ICalculator
+
+{
+
+   int Add(int x, int y)
+
+}
+
+public class LoggingCalculator : ICalculator
+
+{
+
+   private readonly ICalculator calculator;
+ 
+   public LoggingCalculator(ICalculator calculator)
+ 
+   {
+ 
+      this.calculator = calculator;
+ 
+   }
+ 
+   public int Add(int x, int y)
+ 
+   {
+    
+      Console.WriteLine("Add(x={0}, y={1})", x, y);
+    
+      var result = calculator.Add(x, y);
+    
+      Console.WriteLine("result={0}", result);
+    
+      return result;
+ 
+   }
+
+}
+
+public class ConcreteCalculator : ICalculator
+
+{
+ 
+   public int Add(int x, int y)
+ 
+   {
+    
+      return x + y;
+ 
+   }
+
+}
+
 **Assignment - 7**
 Let us consider an online job site that receives XML data files from different employers with current openings in their organizations. When the number of vacancies is small, employers can enter details online. When the number of vacancies is large, employers upload details in the form of an XML file. Once the XML file is received, it needs to be parsed and processed. Let us assume the XML file to have the following details:
 
