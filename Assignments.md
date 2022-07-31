@@ -219,6 +219,9 @@ Monthly report — A list of all transactions for the current month for the sele
 
 YTD sales chart — A chart showing the year-to-date sales for the selected department by month. Whenever a different department is selected, both reports should be refreshed with the data for the currently selected department
 
+<img width="434" alt="image" src="https://user-images.githubusercontent.com/53172079/182024090-cc066340-89c9-451f-81f3-c7f8914a764b.png">
+
+
 **Assignment 6**
 Refactor Below Code and remove code pollution
 
