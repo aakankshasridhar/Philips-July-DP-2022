@@ -322,5 +322,5 @@ i.Employer address
 
 In general, Details from (c) through (i) are all considered being the same for all jobs posted by a given employer. Apply the required pattern to design the process of parsing the input XML file and creating different JOB objects
 
-<img width="337" alt="image" src="https://user-images.githubusercontent.com/53172079/182039442-9a2e9d63-7d34-464a-9411-82a19f5949bf.png">
+<img width="340" alt="image" src="https://user-images.githubusercontent.com/53172079/182039609-03765cae-b304-4a61-a656-7f74f4ed0a87.png">
  
