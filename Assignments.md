@@ -16,6 +16,8 @@ Cables
 
 The Computers product category contains both the Desktops and the Laptops product categories as its subcategories. The Desktop category can contain a product item such as Compaq Presario 5050. Product items are usually individual, in the sense that they do not contain any product component within. Design and implement an PricingCalculator to list the dollar value of a product component or Product Category.
 
+Composite Pattern
+
 ![image](https://user-images.githubusercontent.com/53172079/181826869-f10b53fe-cfab-49ed-9958-929ea938da87.png)
 
 
@@ -136,9 +138,13 @@ The program needs to indicate if there is a need for attention.
 When there is a need to attend, it needs to offer an initial diagnosis, to help in alerting the appropriate personnel: It needs to convey whether the machine needs attention, or if its environment needs attention.
 Design-it
 
+![image](https://user-images.githubusercontent.com/53172079/182923161-1c411c64-669e-41a7-8695-198d0945ae01.png)
+
 **Assignment -4**
 
 https://github.com/venu-shastri/design-patterns-summary/blob/main/DEBT_CODE.docx
+
+1. Violation of SRP
 
 public class Icon
 
@@ -219,8 +225,13 @@ Monthly report — A list of all transactions for the current month for the sele
 
 YTD sales chart — A chart showing the year-to-date sales for the selected department by month. Whenever a different department is selected, both reports should be refreshed with the data for the currently selected department
 
+Mediator Pattern
+
 <img width="434" alt="image" src="https://user-images.githubusercontent.com/53172079/182024090-cc066340-89c9-451f-81f3-c7f8914a764b.png">
 
+Visitor Pattern
+
+<img width="550" alt="image" src="https://user-images.githubusercontent.com/53172079/182922131-61104506-ffa2-4e5d-ac7e-0b1991f675ca.png">
 
 **Assignment 6**
 Refactor Below Code and remove code pollution
@@ -322,5 +333,8 @@ i.Employer address
 
 In general, Details from (c) through (i) are all considered being the same for all jobs posted by a given employer. Apply the required pattern to design the process of parsing the input XML file and creating different JOB objects
 
+Flyweight Pattern
+
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/53172079/182039609-03765cae-b304-4a61-a656-7f74f4ed0a87.png">
  
+<img width="427" alt="Assignment7" src="https://user-images.githubusercontent.com/53172079/182904015-7f7bc32c-f11f-4af7-9c5d-c7aa1fc5c21c.PNG">
